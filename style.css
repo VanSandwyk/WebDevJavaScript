@@ -1,0 +1,619 @@
+/************** DEFAULT CSS ACROSS ALL PAGES ************/
+
+/* use fonts */
+@font-face {
+  font-family: Roboto-Regular;
+  src: url("font/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url("font/Roboto-Bold.ttf");
+}
+
+/* remove default browser paddings and margins */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-family: Roboto-Bold;
+  font-weight: bold;
+}
+
+h2,
+h3,
+a,
+p,
+textarea,
+input,
+label {
+  font-family: Roboto-Regular;
+}
+
+/*--------------------------------------------------------------------------------------------------------------*/
+/* Begin Navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Aligns items to the right */
+  align-items: center; /* Centers items vertically within the navbar */
+  background-color: rgba(51, 51, 51, 0.3); /* Transparent background */
+  position: fixed; /* Fix the navbar at the top */
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+/* List styling */
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav items */
+.nav-item {
+  margin: 0 20px; /* Space between the links */
+}
+
+/* Nav links */
+.nav-link {
+  text-decoration: none;
+  color: white; /* Text color */
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  padding: 10px 0; /* Padding for the links */
+  transition: color 0.3s; /* Smooth color transition */
+  letter-spacing: 1px;
+}
+
+/* Hover effect */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px; /* Position underline further from the text */
+  height: 3px;
+  background-color: transparent; /* Start with no color */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+  transform: scaleX(0); /* Start with the underline not visible */
+}
+
+/* Hover effect color change */
+.nav-link:hover::after {
+  background-color: #f0c050; /* Use a color similar to the underline in the image */
+  transform: scaleX(1); /* Expand underline on hover */
+}
+/*End of navbar*/
+
+/*--------------------------------------------------------------------------------------------------------------*/
+/* begin Responsive Design for navbar*/
+@media (max-width: 992px) {
+  .nav-link {
+    font-size: 14px; /* Slightly smaller text on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .nav-list {
+    gap: 10px; /* Reduce space between items */
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-link {
+    font-size: 12px; /* Even smaller text on very small screens */
+    padding: 8px 0;
+  }
+}
+/*end responsive design for navbar*/
+/*--------------------------------------------------------------------------------------------------------------*/
+/*Begin Sidebar*/
+
+.toggle-checkbox {
+  /*start by hiding the checkbox*/
+  display: none;
+}
+
+.sidebar {
+  position: fixed;
+  top: 50%; /* Move to the middle of the screen */
+  left: -300px;
+  transform: translateY(-50%); /* Center vertically */
+  width: 250px;
+  height: auto; /* Adjust height based on content */
+  background-color: #333;
+  padding: 20px;
+  transition: left 0.3s ease;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+/* Toggle button styling */
+.toggle-button {
+  position: fixed;
+  top: 50%; /* Move to the middle of the screen */
+  left: 15px;
+  font-size: 18px; /* Smaller font size for the arrow */
+  background: #333;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+  transition: left 0.3s ease; /* Smooth transition */
+  z-index: 10; /* Ensure the button is on top */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* Fully round  */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%); /* Center button vertically */
+  border: none;
+}
+
+/* Arrow icon instead of text */
+.toggle-button::after {
+  content: ">"; /* Arrow symbol */
+  font-size: 18px;
+}
+
+/* When the checkbox is checked, move the sidebar into view */
+.toggle-checkbox:checked + .toggle-button + .sidebar {
+  left: 0;
+}
+
+/* When sidebar is shown, shift toggle button */
+.toggle-checkbox:checked + .toggle-button {
+  left: 265px; /* Adjust based on sidebar width */
+}
+/*end Sidebar*/
+/*--------------------------------------------------------------------------------------------------------------*/
+/* Begin Responsive Design for sidebar*/
+@media (max-width: 992px) {
+  /* Adjust sidebar width for medium screens */
+  .sidebar {
+    width: 200px;
+  }
+
+  /* Adjust button position for medium screens */
+  .toggle-button {
+    left: 5px; /* Adjust as needed */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Further adjust sidebar width for smaller screens */
+  .sidebar {
+    width: 150px;
+  }
+
+  /* Adjust button position for smaller screens */
+  .toggle-button {
+    left: 0; /* Move button closer to the screen edge */
+  }
+}
+
+@media (max-width: 576px) {
+  /* Adjust sidebar width for very small screens */
+  .sidebar {
+    width: 120px;
+  }
+
+  /* Adjust button position for very small screens */
+  .toggle-button {
+    left: 0; /* Ensure button is always visible */
+  }
+}
+/* End Responsive Design for sidebar*/
+/*--------------------------------------------------------------------------------------------------------------*/
+
+/*Start Social buttons*/
+.social-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.social-button {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-size: cover; /* Cover background with icons */
+  border-radius: 50%; /* Make buttons circular */
+  transition: transform 0.3s, opacity 0.3s; /* Smooth hover effect */
+}
+
+/* Hover Effect */
+.social-button:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  opacity: 0.8; /* Reduce opacity on hover */
+}
+
+/* Specific Social Icons */
+.social-button.instagram {
+  background-image: url("img/instagram.png"); /* Replace with your icon paths */
+}
+
+.social-button.facebook {
+  background-image: url("img/facebook.png");
+}
+
+.social-button.youtube {
+  background-image: url("img/youtube.png");
+}
+
+.social-button.github {
+  background-image: url("img/github.png");
+}
+
+/* container to wrap max width on all content */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+main {
+  background-color: #ebebdc;
+}
+
+/* header section of every page */
+/*---------------------------------------------------------------------------------------------------*/
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: clamp(8rem, 30%, 15rem) 1rem; /* the vertical padding must 30% of parent but >= 8rem and <= 13rem */
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+    /* bottom, image */ url("img/avocado-bg.jpg");
+  background-size: cover;
+  background-position: 20% 10%;
+  color: white;
+}
+
+header h1 {
+  font-size: 5em;
+  font-weight: 800;
+}
+
+header p {
+  font-size: 1.2em;
+}
+
+#explore-btn {
+  text-decoration: none;
+  box-sizing: border-box;
+  padding: 1.5rem 4rem;
+  color: rgb(32, 29, 22);
+  background-color: #dfcb1a;
+  margin-top: 1rem;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+#explore-btn:hover {
+  background-color: #a3a114;
+  transition: all 500ms ease-in;
+}
+header span {
+  color: #f0c050;
+}
+
+/* end of header section*/
+/*--------------------------------------------------------------------------------------------------------------*/
+
+/* section headings */
+section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* form elements */
+/*--------------------------------------------------------------------------------------------------------------*/
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  padding: 1rem;
+  width: 100%;
+  border: 1px solid #eac879;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+input,
+textarea {
+  width: 70%;
+  padding: 0.5rem;
+}
+
+input[type="submit"] {
+  width: fit-content;
+  padding: 0.5rem 2rem;
+}
+
+textarea {
+  resize: none;
+  min-height: 10rem;
+}
+
+#frequency {
+  padding: 0.5rem 2rem;
+}
+
+/* forms across all pages */
+#login-sn .container,
+#contact-sn .container,
+#signup-sn .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* end form style */
+/*--------------------------------------------------------------------------------------------------------------*/
+
+/* footer */
+/*--------------------------------------------------------------------------------------------------------------*/
+
+footer p {
+  display: inline-block;
+}
+
+footer p,
+footer address,
+.social-buttons {
+  margin: 5px 0;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem; /* Adjust padding as needed */
+}
+
+address {
+  float: right;
+}
+
+/* end footer */
+/*--------------------------------------------------------------------------------------------------------------*/
+
+/********************************* HOME PAGE ********************************/
+/* features section on home page */
+#features article {
+  padding: 0;
+  column-count: 3;
+  column-gap: 1rem;
+}
+
+#features hgroup {
+  text-align: center;
+  background-color: #f0c050;
+  padding: 2rem;
+  border-radius: 5px;
+  min-height: 10rem;
+}
+
+#features hgroup h3 {
+  margin-bottom: 1rem;
+}
+
+#features hgroup p {
+  color: rgb(32, 29, 22);
+}
+
+/* latest recipes section on home page */
+#latest-recipes {
+  background: rgb(245, 244, 238);
+}
+
+#latest-recipes p {
+  text-align: center;
+}
+
+/* explore recipes section on home page */
+#explore-sn {
+}
+#explore-sn .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#explore-sn .container p {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#explore-sn .container ul {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+  list-style: none;
+}
+
+/* explore section image links */
+.explore-link {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: max(10rem, 25%) max(7.2rem, 30%);
+  background-size: cover;
+  color: transparent;
+  text-decoration: none;
+  font-size: 2rem;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+li:nth-child(1) .explore-link {
+  background-image: url("foodImages/food1.jpeg");
+}
+
+li:nth-child(1) .explore-link:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    /* bottom, image */ url("foodImages/food1.jpeg");
+  background-size: cover;
+  transition: all 500ms ease-in;
+  color: white;
+}
+
+li:nth-child(2) .explore-link {
+  background-image: url("foodImages/cheesecake.jpg");
+}
+
+li:nth-child(2) .explore-link:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    /* bottom, image */ url("foodImages/cheesecake.jpg");
+  background-size: cover;
+  transition: all 500ms ease-in;
+  color: white;
+}
+
+li:nth-child(3) .explore-link {
+  background-image: url("foodImages/italian.jpg");
+}
+
+li:nth-child(3) .explore-link:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    /* bottom, image */ url("foodImages/italian.jpg");
+  background-size: cover;
+  transition: all 500ms ease-in;
+  color: white;
+}
+
+/* newsletter section */
+#newsletter .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#newsletter {
+  width: 100%;
+}
+
+/********************** ABOUT PAGE ****************************/
+#team .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#intro h1 {
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+#team article img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+#team hgroup {
+  text-align: center;
+  margin: 1rem;
+}
+#team article {
+  max-width: 20rem;
+  text-align: center;
+  background-color: #e6e5b5;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 650px) {
+  /* media queries for forms */
+  form {
+    align-items: center;
+    border: none;
+  }
+  label {
+    flex-direction: column;
+    width: 80%;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+  }
+
+  /* media queries for features */
+  #features article {
+    column-count: 1;
+  }
+
+  #features hgroup {
+    margin-bottom: 1rem;
+  }
+
+  /* media queries for explore section */
+  #explore-sn .container ul {
+    display: block;
+  }
+
+  .explore-link {
+    width: 100%;
+    padding: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  li:nth-child(1) .explore-link {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      /* bottom, image */ url("foodImages/food1.jpeg");
+    background-size: cover;
+    transition: all 500ms ease-in;
+    color: white;
+  }
+
+  li:nth-child(2) .explore-link {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      /* bottom, image */ url("foodImages/cheesecake.jpg");
+    background-size: cover;
+    transition: all 500ms ease-in;
+    color: white;
+  }
+
+  li:nth-child(3) .explore-link {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      /* bottom, image */ url("foodImages/italian.jpg");
+    background-size: cover;
+    transition: all 500ms ease-in;
+    color: white;
+  }
+}
