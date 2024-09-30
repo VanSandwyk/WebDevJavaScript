@@ -414,6 +414,11 @@ address {
 /*--------------------------------------------------------------------------------------------------------------*/
 
 /********************************* HOME PAGE ********************************/
+
+.main-content .description {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 /* features section on home page */
 #features article {
   padding: 0;
@@ -427,6 +432,7 @@ address {
   padding: 2rem;
   border-radius: 5px;
   min-height: 10rem;
+  aspect-ratio: 1.8 / 1;
 }
 
 #features hgroup h3 {
@@ -517,6 +523,24 @@ li:nth-child(3) .explore-link:hover {
   color: white;
 }
 
+#reviews-sn .slide-container {
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.user-review {
+  display: inline-block;
+  background-color: #f0c050;
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: left;
+  max-width: 400px;
+  white-space: wrap;
+}
+.user-review hgroup p {
+  text-align: left;
+}
+
 /* newsletter section */
 #newsletter .container {
   display: flex;
@@ -529,23 +553,66 @@ li:nth-child(3) .explore-link:hover {
 }
 
 /********************** ABOUT PAGE ****************************/
-#team .container {
+#team .members {
   display: flex;
   justify-content: space-between;
 }
 
-#intro h1 {
-  margin: 1rem 0;
-  font-size: 2rem;
+#intro {
+  background-color: #ebebdc;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
 }
 
+#intro-2 {
+  background: rgb(245, 244, 238);
+}
+#intro h1,
+#intro-2 h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#intro p,
+#intro-2 p {
+  color: rgb(32, 29, 22);
+}
+
+#intro h1 {
+  margin: 1rem 0;
+}
+
+#intro hgroup,
+#intro-2 hgroup {
+  max-width: 35rem;
+}
+#intro .container,
+#intro-2 .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#intro img,
+#intro-2 img {
+  max-height: 22rem;
+  box-shadow: #333;
+}
+
+#team h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+#team article h1 {
+  font-size: 1.5rem;
+}
 #team article img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
-#team hgroup {
+#team .members hgroup {
   text-align: center;
   margin: 1rem;
 }
