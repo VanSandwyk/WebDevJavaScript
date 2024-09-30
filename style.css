@@ -431,7 +431,16 @@ address {
 /*--------------------------------------------------------------------------------------------------------------*/
 
 /********************************* HOME PAGE ********************************/
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
 
+/* Hover effect for cards */
+.card:hover {
+  transform: translateY(-5px); /* Slightly lift the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Deepen the shadow */
+  transition: transform 0.3s, box-shadow 0.5s; /* Smooth hover effect */
+}
 .main-content .description {
   text-align: center;
   margin-bottom: 2rem;
