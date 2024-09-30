@@ -485,6 +485,7 @@ address {
   text-align: center;
   border-radius: 5px;
   font-weight: bold;
+  margin-top: 1rem;
 }
 
 li:nth-child(1) .explore-link {
@@ -523,24 +524,58 @@ li:nth-child(3) .explore-link:hover {
   color: white;
 }
 
-#reviews-sn .slide-container {
+.slide-container {
   overflow-x: hidden;
   white-space: nowrap;
 }
+#reviews-sn .slide-container-inner {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+}
 
 .user-review {
-  display: inline-block;
+  display: flex;
+  gap: 1rem;
   background-color: #f0c050;
   padding: 2rem;
   border-radius: 5px;
   text-align: left;
   max-width: 400px;
   white-space: wrap;
+  margin-right: 0.5rem;
+  min-height: 8rem;
+}
+
+.user-review img {
+  max-height: 2.5rem;
+  aspect-ratio: 1 / 1;
+}
+
+.user-review hgroup {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .user-review hgroup p {
   text-align: left;
+  color: rgb(32, 29, 22);
 }
 
+.review-author {
+  margin-top: auto;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0); /* Start from the beginning */
+  }
+  to {
+    transform: translateX(
+      -50%
+    ); /* Move the entire container by 50% of its width */
+  }
+}
 /* newsletter section */
 #newsletter .container {
   display: flex;
@@ -619,7 +654,7 @@ li:nth-child(3) .explore-link:hover {
 #team article {
   max-width: 20rem;
   text-align: center;
-  background-color: #e6e5b5;
+  background-color: rgb(245, 244, 238);
   padding: 1rem;
   border-radius: 5px;
 }
@@ -658,6 +693,7 @@ li:nth-child(3) .explore-link:hover {
     width: 100%;
     padding: 5rem;
     margin-bottom: 1rem;
+    margin-top: 0;
   }
 
   li:nth-child(1) .explore-link {
