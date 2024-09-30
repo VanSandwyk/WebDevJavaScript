@@ -32,6 +32,23 @@ label {
   font-family: Roboto-Regular;
 }
 
+.btn {
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  color: rgb(32, 29, 22);
+  background-color: #dfcb1a;
+  margin-top: 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #e7d645;
+  transition: all 500ms ease-in;
+  cursor: pointer;
+}
+
 /*--------------------------------------------------------------------------------------------------------------*/
 /* Begin Navbar */
 .navbar {
@@ -471,6 +488,7 @@ address {
   grid-template-columns: auto auto auto;
   gap: 1rem;
   list-style: none;
+  width: min-content;
 }
 
 /* explore section image links */
@@ -522,6 +540,11 @@ li:nth-child(3) .explore-link:hover {
   background-size: cover;
   transition: all 500ms ease-in;
   color: white;
+}
+
+#reviews-sn {
+  padding-bottom: 4rem;
+  background: rgb(245, 244, 238);
 }
 
 .slide-container {
@@ -578,15 +601,39 @@ li:nth-child(3) .explore-link:hover {
 }
 /* newsletter section */
 #newsletter .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 8rem 0;
 }
 
 #newsletter {
   width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+    /* bottom, image */ url("img/spices.jpg");
+  background-size: cover;
+  background-position: 20% 35%;
+  color: white;
 }
 
+#newsletter form {
+  border: none;
+  margin-bottom: 0;
+}
+
+.newsletter-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newsletter-content p,
+.newsletter-content form {
+  font-size: 1.3em;
+}
+
+.newsletter-content p {
+  max-width: 30rem;
+  margin-right: 5rem;
+  color: rgb(232, 232, 232);
+}
 /********************** ABOUT PAGE ****************************/
 #team .members {
   display: flex;
@@ -643,6 +690,7 @@ li:nth-child(3) .explore-link:hover {
 }
 #team article img {
   width: 100%;
+  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
@@ -657,6 +705,22 @@ li:nth-child(3) .explore-link:hover {
   background-color: rgb(245, 244, 238);
   padding: 1rem;
   border-radius: 5px;
+}
+@media only screen and (max-width: 800px) {
+  #intro .container,
+  #intro-2 .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #team .members {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #team article {
+    margin-bottom: 1rem;
+  }
 }
 
 @media only screen and (max-width: 650px) {
@@ -678,6 +742,7 @@ li:nth-child(3) .explore-link:hover {
   /* media queries for features */
   #features article {
     column-count: 1;
+    aspect-ratio: unset;
   }
 
   #features hgroup {
@@ -718,5 +783,17 @@ li:nth-child(3) .explore-link:hover {
     background-size: cover;
     transition: all 500ms ease-in;
     color: white;
+  }
+
+  /* media queries for newsletter*/
+  .newsletter-content {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-size: 0.8em;
+  }
+
+  .newsletter-content p {
+    margin-right: 0;
   }
 }
