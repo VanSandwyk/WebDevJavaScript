@@ -478,6 +478,33 @@ address {
   text-align: center;
 }
 
+#latest-recipes ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex: 1;
+}
+
+#latest-recipes ul li {
+  text-align: center;
+  width: min-content;
+  background-color: #ffffff;
+}
+
+#latest-recipes li img {
+  max-width: 20rem;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+#latest-recipes li a {
+  text-decoration: none;
+  box-sizing: border-box;
+  display: inline-block;
+  max-height: 10%;
+}
+
 /* explore recipes section on home page */
 #explore-sn {
 }
@@ -485,6 +512,7 @@ address {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 #explore-sn .container p {
@@ -493,18 +521,25 @@ address {
 }
 
 #explore-sn .container ul {
-  display: grid;
-  grid-template-columns: auto auto auto;
+  display: flex;
+  justify-content: space-between;
   gap: 1rem;
   list-style: none;
-  width: min-content;
+  flex: 1;
+  width: 100%;
+}
+
+#explore-sn .container li {
+  width: 100%;
 }
 
 /* explore section image links */
 .explore-link {
   display: inline-block;
   box-sizing: border-box;
-  padding: max(10rem, 25%) max(7.2rem, 30%);
+  width: 100%;
+  height: 100%;
+  padding: clamp(5rem, 60%, 10rem) 0;
   background-size: cover;
   color: transparent;
   text-decoration: none;
@@ -512,7 +547,6 @@ address {
   text-align: center;
   border-radius: 5px;
   font-weight: bold;
-  margin-top: 1rem;
 }
 
 li:nth-child(1) .explore-link {
