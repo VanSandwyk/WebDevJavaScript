@@ -14,7 +14,7 @@
     <nav class="navbar">
       <ul class="nav-list">
         <li class="nav-item">
-          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html" class="nav-link active">Home</a>
         </li>
         <li class="nav-item">
           <a href="about.html" class="nav-link">About</a>
@@ -100,33 +100,18 @@
       <section id="latest-recipes">
         <section class="container">
           <h2>Latest Recipes</h2>
+          <hr />
           <p class="description">
             Want to try something new? Get a hold of our newest recipes.
           </p>
-          <ul>
-            <li>
-              <a href="#">
-                <img src="img/plate2.jpg" />
-                <a href="recipes/chocolate_cake.html"> Chocolate Cake </a>
-              </a>
-            </li>
-
-            <li>
-              <img src="img/plate2.jpg" />
-              <a href="recipes/chocolate_cake.html"> Pasta Alfredo </a>
-            </li>
-
-            <li>
-              <img src="img/plate2.jpg" />
-              <a href="recipes/chocolate_cake.html"> Beef Stew </a>
-            </li>
-          </ul>
+          <ul id="latest-recipes-list"></ul>
         </section>
       </section>
 
       <section id="explore-sn">
         <section class="container">
           <h2>Explore our Recipes</h2>
+          <hr />
           <p class="description">
             Check out our diverse catalogue of recipes made by foodies like you.
           </p>
@@ -154,50 +139,13 @@
       <section id="reviews-sn">
         <section class="container">
           <h2>What Others Are Saying</h2>
+          <hr />
           <p class="description">
             From cooking tips to favorite recipes, our community shares their
             honest feedback to help you find the perfect dish.
           </p>
           <section class="slide-container">
-            <section class="slide-container-inner">
-              <article class="user-review">
-                <img src="img/avatar-icon.png" />
-                <hgroup>
-                  <p class="review-bd">
-                    "This site has an amazing variety of recipes from different
-                    cuisines. I love how easy it is to follow the steps, and the
-                    user reviews help me choose the best ones. It's now my go-to
-                    for weeknight dinners!"
-                  </p>
-                  <h3 class="review-author">- Charmie</h3>
-                </hgroup>
-              </article>
-
-              <article class="user-review">
-                <img src="img/avatar-icon.png" />
-                <hgroup>
-                  <p class="review-bd">
-                    "I’m new to cooking, but the clear instructions and helpful
-                    tips on this site have made the process so much easier. The
-                    community is also super supportive when I need advice!"
-                  </p>
-                  <h3 class="review-author">- Gordon</h3>
-                </hgroup>
-              </article>
-
-              <article class="user-review">
-                <img src="img/avatar-icon.png" />
-                <hgroup>
-                  <p class="review-bd">
-                    "I’m always finding new meal ideas here. The filters make it
-                    easy to search by dietary preferences, and the photos really
-                    help visualize what the final dish should look like. I’ve
-                    discovered so many favorites!"
-                  </p>
-                  <h3 class="review-author">- Kaizer</h3>
-                </hgroup>
-              </article>
-            </section>
+            <section id="user-reviews" class="slide-container-inner"></section>
           </section>
         </section>
       </section>
@@ -205,6 +153,7 @@
       <section id="newsletter">
         <section class="container">
           <h2>Join Our Newsletter</h2>
+          <hr />
           <article class="newsletter-content">
             <p>
               By subscribing to our news letter you'll receive exclusive access
@@ -273,6 +222,6 @@
         <!--End social buttons-->
       </section>
     </footer>
-    <script src="index.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

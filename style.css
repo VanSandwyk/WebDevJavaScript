@@ -49,6 +49,17 @@ label {
   cursor: pointer;
 }
 
+.active {
+  border-bottom: 3px #f0c050 solid;
+}
+
+hr {
+  display: block;
+  margin-bottom: 2rem;
+  border: 0;
+  border-top: 1px #c4c9c9 solid;
+  width: 100%;
+}
 /*--------------------------------------------------------------------------------------------------------------*/
 /* Begin Navbar */
 .navbar {
@@ -483,19 +494,34 @@ address {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  flex: 1;
 }
 
 #latest-recipes ul li {
   text-align: center;
-  width: min-content;
   background-color: #ffffff;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 #latest-recipes li img {
-  max-width: 20rem;
   height: auto;
-  width: auto\9; /* ie8 */
+  width: 100%; /* ie8 */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+#latest-recipes li article {
+  box-sizing: border-box;
+  width: 100%; /* ie8 */
+  padding: 1rem;
+}
+
+#latest-recipes li h3 {
+  color: black;
+}
+#latest-recipes li p {
+  color: #605e5e;
 }
 
 #latest-recipes li a {
@@ -516,7 +542,7 @@ address {
 }
 
 #explore-sn .container p {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -790,6 +816,10 @@ li:nth-child(3) .explore-link:hover {
 
   #features hgroup {
     margin-bottom: 1rem;
+  }
+
+  #latest-recipes ul {
+    flex-direction: column;
   }
 
   /* media queries for explore section */
