@@ -168,7 +168,7 @@ function addFeaturedReview(review) {
         <img src='img/avatar-icon.png'>
         <hgroup>
           <p class="review-bd">${review.body}</p>
-          <h3 class="review-author">${review.name}</h3>
+          <h3 class="review-author">- ${review.name}</h3>
         </hgroup>
       </article>`;
 }
