@@ -32,6 +32,10 @@ label {
   font-family: Roboto-Regular;
 }
 
+a {
+  text-decoration: none;
+}
+
 .btn {
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -876,6 +880,10 @@ li:nth-child(3) .explore-link:hover {
   #team .members {
     flex-direction: column;
     align-items: center;
+  }
+
+  #team hgroup p {
+    color: rgb(255, 254, 253);
   }
 
   #team article {
