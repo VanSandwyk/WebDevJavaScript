@@ -14,7 +14,7 @@
     <nav class="navbar">
       <ul class="nav-list">
         <li class="nav-item">
-          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html" class="nav-link active">Home</a>
         </li>
         <li class="nav-item">
           <a href="about.html" class="nav-link">About</a>
@@ -58,7 +58,7 @@
         href="recipes.html"
         id="explore-btn"
         title="Explore our collection of recipes"
-        >Explore Recipes</a
+        ><strong>Explore Recipes</strong></a
       >
     </header>
 
@@ -67,7 +67,7 @@
         <section class="container">
           <h2>Features</h2>
           <article>
-            <hgroup>
+            <hgroup class="card">
               <h3>Discover</h3>
               <p>
                 Explore a world of flavors and ingredients through our extensive
@@ -76,7 +76,7 @@
               </p>
             </hgroup>
 
-            <hgroup>
+            <hgroup class="card">
               <h3>Cook</h3>
               <p>
                 Dive into step-by-step guides and cooking tips that make
@@ -86,7 +86,7 @@
               </p>
             </hgroup>
 
-            <hgroup>
+            <hgroup class="card">
               <h3>Share</h3>
               <p>
                 Exchange tips, tricks, and personal touches that make each dish
@@ -100,27 +100,19 @@
       <section id="latest-recipes">
         <section class="container">
           <h2>Latest Recipes</h2>
-          <p>Want to try something new? Get a hold of our newest recipes.</p>
-          <ul>
-            <li>
-              <a href="recipes/chocolate_cake.html"> Chocolate Cake </a>
-            </li>
-
-            <li>
-              <a href="recipes/chocolate_cake.html"> Pasta Alfredo </a>
-            </li>
-
-            <li>
-              <a href="recipes/chocolate_cake.html"> Beef Stew </a>
-            </li>
-          </ul>
+          <hr />
+          <p class="description">
+            Want to try something new? Get a hold of our newest recipes.
+          </p>
+          <ul id="latest-recipes-list"></ul>
         </section>
       </section>
 
       <section id="explore-sn">
         <section class="container">
           <h2>Explore our Recipes</h2>
-          <p>
+          <hr />
+          <p class="description">
             Check out our diverse catalogue of recipes made by foodies like you.
           </p>
           <ul>
@@ -144,25 +136,49 @@
         </section>
       </section>
 
+      <section id="reviews-sn">
+        <section class="container">
+          <h2>What Others Are Saying</h2>
+          <hr />
+          <p class="description">
+            From cooking tips to favorite recipes, our community shares their
+            honest feedback to help you find the perfect dish.
+          </p>
+          <section class="slide-container">
+            <section id="user-reviews" class="slide-container-inner"></section>
+          </section>
+        </section>
+      </section>
+
       <section id="newsletter">
         <section class="container">
-          <form action="subscribe.html" method="post">
-            <h2>Join Our Newsletter</h2>
-            <label for="email"
-              >Email: <input type="email" id="email" name="email" required
-            /></label>
+          <h2>Join Our Newsletter</h2>
+          <hr />
+          <article class="newsletter-content">
+            <p>
+              By subscribing to our news letter you'll receive exclusive access
+              to special recipe collections, cooking tips, and sustainable
+              living guide, directly in your inbox. Join the Recipe Hub family
+              and elevate your culinary experience.
+            </p>
 
-            <label for="frequency"
-              >Frequency:
-              <select id="frequency" name="frequency">
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-                <option value="quarterly">Quarterly</option>
-              </select>
-            </label>
+            <form action="subscribe.html" method="post">
+              <label for="email"
+                >Email: <input type="email" id="email" name="email" required
+              /></label>
 
-            <input type="submit" value="Subscribe" />
-          </form>
+              <label for="frequency"
+                >Frequency:
+                <select id="frequency" name="frequency">
+                  <option value="weekly">Weekly</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="quarterly">Quarterly</option>
+                </select>
+              </label>
+
+              <input class="btn" type="submit" value="Subscribe" />
+            </form>
+          </article>
         </section>
       </section>
     </main>
@@ -206,5 +222,6 @@
         <!--End social buttons-->
       </section>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

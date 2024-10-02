@@ -32,6 +32,34 @@ label {
   font-family: Roboto-Regular;
 }
 
+.btn {
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  color: rgb(32, 29, 22);
+  background-color: #dfcb1a;
+  margin-top: 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #e7d645;
+  transition: all 500ms ease-in;
+  cursor: pointer;
+}
+
+.active {
+  border-bottom: 3px #f0c050 solid;
+}
+
+hr {
+  display: block;
+  margin-bottom: 2rem;
+  border: 0;
+  border-top: 1px #c4c9c9 solid;
+  width: 100%;
+}
 /*--------------------------------------------------------------------------------------------------------------*/
 /* Begin Navbar */
 .navbar {
@@ -317,8 +345,8 @@ header p {
 }
 
 #explore-btn:hover {
-  background-color: #a3a114;
-  transition: all 500ms ease-in;
+  background-color: #e7d645;
+  transition: all 300ms ease-in;
 }
 header span {
   color: #f0c050;
@@ -414,6 +442,20 @@ address {
 /*--------------------------------------------------------------------------------------------------------------*/
 
 /********************************* HOME PAGE ********************************/
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Hover effect for cards */
+.card:hover {
+  transform: translateY(-5px); /* Slightly lift the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Deepen the shadow */
+  transition: transform 0.3s, box-shadow 0.5s; /* Smooth hover effect */
+}
+.main-content .description {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 /* features section on home page */
 #features article {
   padding: 0;
@@ -427,6 +469,7 @@ address {
   padding: 2rem;
   border-radius: 5px;
   min-height: 10rem;
+  aspect-ratio: 1.8 / 1;
 }
 
 #features hgroup h3 {
@@ -446,6 +489,48 @@ address {
   text-align: center;
 }
 
+#latest-recipes ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+#latest-recipes ul li {
+  text-align: center;
+  background-color: #ffffff;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+#latest-recipes li img {
+  height: auto;
+  width: 100%; /* ie8 */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+#latest-recipes li article {
+  box-sizing: border-box;
+  width: 100%; /* ie8 */
+  padding: 1rem;
+}
+
+#latest-recipes li h3 {
+  color: black;
+}
+#latest-recipes li p {
+  color: #605e5e;
+}
+
+#latest-recipes li a {
+  text-decoration: none;
+  box-sizing: border-box;
+  display: inline-block;
+  max-height: 10%;
+}
+
 /* explore recipes section on home page */
 #explore-sn {
 }
@@ -453,25 +538,34 @@ address {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 #explore-sn .container p {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
 #explore-sn .container ul {
-  display: grid;
-  grid-template-columns: auto auto auto;
+  display: flex;
+  justify-content: space-between;
   gap: 1rem;
   list-style: none;
+  flex: 1;
+  width: 100%;
+}
+
+#explore-sn .container li {
+  width: 100%;
 }
 
 /* explore section image links */
 .explore-link {
   display: inline-block;
   box-sizing: border-box;
-  padding: max(10rem, 25%) max(7.2rem, 30%);
+  width: 100%;
+  height: 100%;
+  padding: clamp(5rem, 60%, 10rem) 0;
   background-size: cover;
   color: transparent;
   text-decoration: none;
@@ -517,38 +611,121 @@ li:nth-child(3) .explore-link:hover {
   color: white;
 }
 
-/* newsletter section */
-#newsletter .container {
+#reviews-sn {
+  padding-bottom: 4rem;
+  background: rgb(245, 244, 238);
+}
+
+.slide-container {
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+#reviews-sn .slide-container-inner {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.user-review {
+  display: flex;
+  gap: 1rem;
+  background-color: #f0c050;
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: left;
+  max-width: 400px;
+  white-space: wrap;
+  margin-right: 0.5rem;
+  min-height: 8rem;
+}
+
+.user-review img {
+  max-height: 2.5rem;
+  aspect-ratio: 1 / 1;
+}
+
+.user-review hgroup {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100%;
+}
+.user-review hgroup p {
+  text-align: left;
+  color: rgb(32, 29, 22);
+}
+
+.review-author {
+  margin-top: auto;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0); /* Start from the beginning */
+  }
+  to {
+    transform: translateX(
+      -50%
+    ); /* Move the entire container by 50% of its width */
+  }
+}
+/* newsletter section */
+#newsletter .container {
+  padding: 8rem 0;
 }
 
 #newsletter {
   width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+    /* bottom, image */ url("img/spices.jpg");
+  background-size: cover;
+  background-position: 20% 35%;
+  color: white;
 }
+
+#newsletter form {
+  border: none;
+  margin-bottom: 0;
+}
+
+.newsletter-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newsletter-content p,
+.newsletter-content form {
+  font-size: 1.3em;
+}
+
+.newsletter-content p {
+  max-width: 30rem;
+  margin-right: 5rem;
+  color: rgb(232, 232, 232);
+}
+
 /*Submit Recipe Page----------------------------------------------------------------------------------------*/
-#submit-recipe{
+#submit-recipe {
   background-color: #f0efc6;
 }
-#submit-recipe .container{
+#submit-recipe .container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-
-#recipe-name:focus{
+}
+#recipe-name:focus {
   outline: none;
   border-color: rgb(248, 232, 1);
   box-shadow: 0 0 10px rgba(248, 232, 1);
 }
 
-#recipe-desc:focus{
+#recipe-desc:focus {
   outline: none;
   border-color: rgb(248, 232, 1);
   box-shadow: 0 0 10px rgba(248, 232, 1);
 }
-}
+
 /*Submit Recipe Page----------------------------------------------------------------------------------------*/
 
 /*Recipe Page----------------------------------------------------------------------------------------*/
@@ -574,9 +751,9 @@ li:nth-child(3) .explore-link:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease; /*allows if there are transistion effects that it is smooth and not instant*/
 }
 
-.recipe-card:hover{
+.recipe-card:hover {
   transform: scale(1.05); /*pop up card by 5 percent*/
-  box-shadow: 0 8px 16px rgba(0 , 0 , 0 ,0.2); /*enlarges the image and adds a box shadow where 0 is horizontal ofset, 8 is vertical offset , 16 is shadow raduis, 0.2 is 20 percent opacity*/
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /*enlarges the image and adds a box shadow where 0 is horizontal ofset, 8 is vertical offset , 16 is shadow raduis, 0.2 is 20 percent opacity*/
 }
 .recipe-card img {
   width: 100%;
@@ -617,32 +794,92 @@ li:nth-child(3) .explore-link:hover {
 
 /*Recipe Page----------------------------------------------------------------------------------------*/
 /********************** ABOUT PAGE ****************************/
-#team .container {
+#team .members {
   display: flex;
   justify-content: space-between;
 }
 
-#intro h1 {
-  margin: 1rem 0;
-  font-size: 2rem;
+#intro {
+  background-color: #ebebdc;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
 }
 
+#intro-2 {
+  background: rgb(245, 244, 238);
+}
+#intro h1,
+#intro-2 h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#intro p,
+#intro-2 p {
+  color: rgb(32, 29, 22);
+}
+
+#intro h1 {
+  margin: 1rem 0;
+}
+
+#intro hgroup,
+#intro-2 hgroup {
+  max-width: 35rem;
+}
+#intro .container,
+#intro-2 .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#intro img,
+#intro-2 img {
+  max-height: 22rem;
+  box-shadow: #333;
+}
+
+#team h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+#team article h1 {
+  font-size: 1.5rem;
+}
 #team article img {
   width: 100%;
+  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
-#team hgroup {
+#team .members hgroup {
   text-align: center;
   margin: 1rem;
 }
 #team article {
   max-width: 20rem;
   text-align: center;
-  background-color: #e6e5b5;
+  background-color: rgb(245, 244, 238);
   padding: 1rem;
   border-radius: 5px;
+}
+@media only screen and (max-width: 800px) {
+  #intro .container,
+  #intro-2 .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #team .members {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #team article {
+    margin-bottom: 1rem;
+  }
 }
 
 @media only screen and (max-width: 650px) {
@@ -664,10 +901,15 @@ li:nth-child(3) .explore-link:hover {
   /* media queries for features */
   #features article {
     column-count: 1;
+    aspect-ratio: unset;
   }
 
   #features hgroup {
     margin-bottom: 1rem;
+  }
+
+  #latest-recipes ul {
+    flex-direction: column;
   }
 
   /* media queries for explore section */
@@ -679,6 +921,7 @@ li:nth-child(3) .explore-link:hover {
     width: 100%;
     padding: 5rem;
     margin-bottom: 1rem;
+    margin-top: 0;
   }
 
   li:nth-child(1) .explore-link {
@@ -703,5 +946,17 @@ li:nth-child(3) .explore-link:hover {
     background-size: cover;
     transition: all 500ms ease-in;
     color: white;
+  }
+
+  /* media queries for newsletter*/
+  .newsletter-content {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-size: 0.8em;
+  }
+
+  .newsletter-content p {
+    margin-right: 0;
   }
 }
