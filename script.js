@@ -160,7 +160,7 @@ function loadRecipes() {
 }
 
 // Load recipes on page load
-window.onload = loadRecipes();
+window.onload = loadRecipes;
 
 // globals
 const scrollerContainer = document.querySelector(".slide-container-inner");
