@@ -455,6 +455,7 @@ address {
 .main-content .description {
   text-align: center;
   margin-bottom: 2rem;
+  color: rgb(32, 29, 22);
 }
 /* features section on home page */
 #features article {
