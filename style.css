@@ -960,3 +960,57 @@ li:nth-child(3) .explore-link:hover {
     margin-right: 0;
   }
 }
+
+/*-----------------------------------------------------------------------------------------------------------*/
+/*Recipe-Detail*/
+
+#myHeader{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: clamp(8rem, 30%, 15rem) 1rem; /* the vertical padding must 30% of parent but >= 8rem and <= 13rem */
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+    /* bottom, image */ url("img/avocado-bg.jpg");
+  background-size: cover;
+  background-position: 20% 10%;
+  color: white;
+}
+
+#recipe-detail {
+  width : 35%;
+  height : 35%;
+  border: black solid 1px;
+}
+
+#recipe-discription {
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#recipe-detail {
+  width: 35%;
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensures margin auto works */
+  margin: 0 auto 20px auto; /* Centers horizontally and adds margin at the bottom */
+  border: black solid 1px;
+  border-radius: 10px;
+  max-width: 100%;
+  text-align: center;
+}
+
+#myh2{
+  font-size: 24px;
+  color: #ff5722;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ff5722;
+}
+.recipe-Section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
