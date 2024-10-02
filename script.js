@@ -185,3 +185,103 @@ function addLatestRecipe(recipe) {
         </a>
       </li>`;
 }
+
+
+//Task 6 and task 7
+// ----------- ADDED: Adjust column layout dynamically based on window size ----------- //
+function adjustColumnLayout() {
+  const recipeContainer = document.getElementById("recipe-cards");
+  const width = window.innerWidth;
+
+  if (width < 600) {
+    recipeContainer.style.columnCount = 1;
+  } else if (width < 1000) {
+    recipeContainer.style.columnCount = 2;
+  } else {
+    recipeContainer.style.columnCount = 3;
+  }
+}
+
+// Call adjustColumnLayout on load and resize
+window.addEventListener("resize", adjustColumnLayout);
+window.addEventListener("load", adjustColumnLayout);
+
+// ---------------- Added Event Listeners for HTML DOM Events ---------------- //
+
+function highlightOnHover(event) {
+  event.target.style.backgroundColor = "lightyellow";
+}
+
+function removeHighlight(event) {
+  event.target.style.backgroundColor = "";
+}
+
+function toggleSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  sidebar.classList.toggle("active");
+}
+
+function logScrollPosition() {
+  console.log("Scroll Position: ", window.scrollY);
+}
+
+function preventContextMenu(event) {
+  event.preventDefault();
+  alert("Right-click is disabled!");
+}
+
+function onRecipeDoubleClick() {
+  alert("Recipe double-clicked for details!");
+}
+
+function detectKeydown(event) {
+  console.log("Key pressed: ", event.key);
+}
+
+function changeBackgroundColor() {
+  document.body.style.backgroundColor = "lightblue";
+}
+
+function resetBackgroundColor() {
+  document.body.style.backgroundColor = "";
+}
+
+function onFormSubmit(event) {
+  event.preventDefault();
+  alert("Form submitted!");
+}
+
+// ----------- Attach Event Listeners to Elements ----------- //
+
+// Add hover effects for recipe cards
+document.querySelectorAll(".recipe-card").forEach((card) => {
+  card.addEventListener("mouseenter", highlightOnHover);
+  card.addEventListener("mouseleave", removeHighlight);
+});
+
+// Sidebar toggle
+document.querySelector(".toggle-button").addEventListener("click", toggleSidebar);
+
+// Log scroll position
+window.addEventListener("scroll", logScrollPosition);
+
+// Disable right-click on the page
+window.addEventListener("contextmenu", preventContextMenu);
+
+// Double-click to show recipe details
+document.querySelectorAll(".recipe-card").forEach((card) => {
+  card.addEventListener("dblclick", onRecipeDoubleClick);
+});
+
+// Detect keypresses on the page
+window.addEventListener("keydown", detectKeydown);
+
+// Change background color on button hover
+document.querySelector(".navbar").addEventListener("mouseenter", changeBackgroundColor);
+document.querySelector(".navbar").addEventListener("mouseleave", resetBackgroundColor);
+
+// Form submit example (if there is a form)
+const formElement = document.querySelector("form");
+if (formElement) {
+  formElement.addEventListener("submit", onFormSubmit);
+}
