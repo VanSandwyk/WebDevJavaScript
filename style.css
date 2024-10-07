@@ -119,6 +119,58 @@ hr {
   background-color: #f0c050; /* Use a color similar to the underline in the image */
   transform: scaleX(1); /* Expand underline on hover */
 }
+
+#signIn main {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+    /* bottom, image */ url("img/avocado-bg.jpg");
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#signIn section {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+#signIn header {
+  background: none;
+  padding: 10rem 0;
+  color: #333;
+}
+
+#signIn form {
+  border: none;
+  background-color: rgb(245, 245, 245);
+  padding: 2rem;
+  max-width: 25rem;
+}
+
+#signIn form h1 {
+  font-size: 4em;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+label {
+  align-items: center;
+}
+#signIn form p {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #605e5e;
+}
+
+#signIn form p:last-child {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+#signIn form input[type="submit"] {
+  width: 100%;
+}
+
 /*End of navbar*/
 
 /*--------------------------------------------------------------------------------------------------------------*/

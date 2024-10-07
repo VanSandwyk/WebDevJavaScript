@@ -6,7 +6,7 @@
     <title>Sign In | Recipes</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
-  <body>
+  <body id="signIn">
     <nav>
       <nav class="navbar">
         <ul class="nav-list">
@@ -46,18 +46,16 @@
 </div>
 <!--end Sidebar-->
 
-
-    <header>
-      <h1>Sign In</h1>
-      <p>Access your account and start sharing your favorite recipes!</p>
-    </header>
-
     <main>
       <section id="login-sn">
         <section class="container">
+          <hgroup>
+            <h1>Sign In</h1>
+          </hgroup>
          
-          <form action="login.html" method="post">
-            <h2>Login</h2>
+          <form class="card" action="login.html" method="post">
+            <h1>Sign In</h1>
+            <p>Access your account and start sharing recipes</p>
             <label for="username"
               >Username:
               <input type="text" id="username" name="username" required
@@ -68,31 +66,12 @@
               <input type="password" id="password" name="password" required
             /></label>
 
-            <input type="submit" value="Sign In" />
+            <input class="btn" type="submit" value="Sign In" />
+            <p>Don't have an account? <a href="register.html">Sign Up</a></p>
           </form>
-          <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+          
         </section>
       </section>
     </main>
-
-    <footer>
-      <section class="container">
-        <p>&copy; The OG's 2024. All rights reserved.</p>
-        <address role="contentinfo">
-          Email: <a href="mailto:recipe@gmail.com">recipe@gmail.com</a><br />
-          Phone: <a href="tel:+27451234567">+27 45 123 4567</a>
-        </address>
-        <!--Begin social buttons-->
-
-        <!--TODO replace links with relevant locations-->
-        <div class="social-buttons">
-          <a href="https://www.instagram.com" class="social-button instagram" aria-label="Instagram" target="_blank"></a>
-          <a href="https://www.facebook.com" class="social-button facebook" aria-label="Facebook" target="_blank"></a>
-          <a href="https://www.youtube.com" class="social-button youtube" aria-label="YouTube" target="_blank"></a>
-          <a href="https://www.github.com" class="social-button github" aria-label="GitHub" target="_blank"></a>
-        </div>
-        <!--End social buttons-->
-      </section>
-    </footer>
   </body>
 </html>
