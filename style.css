@@ -17,6 +17,49 @@
   margin: 0;
 }
 
+ /* Center align the overlay content */
+ .overlay {
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  height: 100%; /* Full height of the header */
+  text-align: center; /* Center text */
+}
+
+/* Style for the search bar */
+.search-bar {
+  display: flex; /* Flexbox for horizontal alignment */
+  align-items: center; /* Center items vertically */
+  margin: 20px 0; /* Add vertical space */
+}
+
+#searchRecipeTab {
+  width: 300px; /* Adjust width to your preference */
+  padding: 10px; /* Padding for comfort */
+  border: 2px solid #ccc; /* Border style */
+  border-radius: 20px; /* Rounded edges for oval shape */
+  outline: none; /* Remove default outline */
+  font-size: 16px; /* Font size */
+}
+
+/* Style for the search button */
+button {
+  padding: 10px 20px; /* Padding for the button */
+  border: none; /* Remove default border */
+  border-radius: 20px; /* Rounded edges for oval shape */
+  background-color: #28a745; /* Green background */
+  color: white; /* Text color */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-left: 10px; /* Space between search bar and button */
+}
+
+/* Optional: Add hover effect for button */
+button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
 h1 {
   font-family: Roboto-Bold;
   font-weight: bold;
@@ -30,6 +73,10 @@ textarea,
 input,
 label {
   font-family: Roboto-Regular;
+}
+
+a {
+  text-decoration: none;
 }
 
 .btn {
@@ -455,6 +502,7 @@ address {
 .main-content .description {
   text-align: center;
   margin-bottom: 2rem;
+  color: rgb(32, 29, 22);
 }
 /* features section on home page */
 #features article {
@@ -877,6 +925,10 @@ li:nth-child(3) .explore-link:hover {
     align-items: center;
   }
 
+  #team hgroup p {
+    color: rgb(255, 254, 253);
+  }
+
   #team article {
     margin-bottom: 1rem;
   }
@@ -959,4 +1011,58 @@ li:nth-child(3) .explore-link:hover {
   .newsletter-content p {
     margin-right: 0;
   }
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+/*Recipe-Detail*/
+
+#myHeader{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: clamp(8rem, 30%, 15rem) 1rem; /* the vertical padding must 30% of parent but >= 8rem and <= 13rem */
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+    /* bottom, image */ url("img/avocado-bg.jpg");
+  background-size: cover;
+  background-position: 20% 10%;
+  color: white;
+}
+
+#recipe-detail {
+  width : 35%;
+  height : 35%;
+  border: black solid 1px;
+}
+
+#recipe-discription {
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#recipe-detail {
+  width: 35%;
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensures margin auto works */
+  margin: 0 auto 20px auto; /* Centers horizontally and adds margin at the bottom */
+  border: black solid 1px;
+  border-radius: 10px;
+  max-width: 100%;
+  text-align: center;
+}
+
+#myh2{
+  font-size: 24px;
+  color: #ff5722;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ff5722;
+}
+.recipe-Section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
