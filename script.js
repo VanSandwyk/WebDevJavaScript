@@ -356,3 +356,22 @@ const formElement = document.querySelector("form");
 if (formElement) {
   formElement.addEventListener("submit", onFormSubmit);
 }
+
+
+         
+ function searchRecipeDatabase() {
+    const searchQuery = document.getElementById("searchRecipeTab").value;
+
+    // AJAX request to PHP file
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "search.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.onload = function () {
+    if (this.status === 200) {
+        document.getElementById("results").innerHTML = this.responseText;
+        }
+      };
+
+      xhr.send("query=" + encodeURIComponent(searchQuery));
+    }

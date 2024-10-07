@@ -17,6 +17,49 @@
   margin: 0;
 }
 
+ /* Center align the overlay content */
+ .overlay {
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  height: 100%; /* Full height of the header */
+  text-align: center; /* Center text */
+}
+
+/* Style for the search bar */
+.search-bar {
+  display: flex; /* Flexbox for horizontal alignment */
+  align-items: center; /* Center items vertically */
+  margin: 20px 0; /* Add vertical space */
+}
+
+#searchRecipeTab {
+  width: 300px; /* Adjust width to your preference */
+  padding: 10px; /* Padding for comfort */
+  border: 2px solid #ccc; /* Border style */
+  border-radius: 20px; /* Rounded edges for oval shape */
+  outline: none; /* Remove default outline */
+  font-size: 16px; /* Font size */
+}
+
+/* Style for the search button */
+button {
+  padding: 10px 20px; /* Padding for the button */
+  border: none; /* Remove default border */
+  border-radius: 20px; /* Rounded edges for oval shape */
+  background-color: #28a745; /* Green background */
+  color: white; /* Text color */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-left: 10px; /* Space between search bar and button */
+}
+
+/* Optional: Add hover effect for button */
+button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
 h1 {
   font-family: Roboto-Bold;
   font-weight: bold;
